@@ -306,22 +306,9 @@ h2::after {
 }
 
 .experience-header {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
     margin-bottom: 1rem;
 }
 
-.company-logo {
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
-    background: rgba(255, 255, 255, 0.03);
-    padding: 8px;
-    border-radius: 8px;
-    border: 1px solid rgba(var(--primary-blue-rgb), 0.15);
-    flex-shrink: 0;
-}
 
 .experience-info {
     flex: 1;
@@ -335,7 +322,7 @@ h2::after {
     margin-bottom: 0.25rem;
 }
 
-.experience-item h3 {
+.experience-info h3 {
     font-size: 1.1rem;
     font-weight: 500;
     color: var(--text-secondary);
@@ -351,6 +338,7 @@ h2::after {
     background: rgba(var(--primary-blue-rgb), 0.08);
     border-radius: 4px;
 }
+
 
 .experience-description {
     margin-top: 1rem;
@@ -468,7 +456,7 @@ footer a {
     transition: opacity 0.3s ease;
 }
 
-/* Responsive Design */
+/* Mobile and Tablet only */
 @media (max-width: 768px) {
     .container {
         padding: 2rem 1.5rem;
@@ -504,15 +492,7 @@ footer a {
         font-size: 1.3rem;
     }
 
-    .project-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .experience-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
+    .project-grid,
     .skills-grid {
         grid-template-columns: 1fr;
     }
@@ -522,6 +502,34 @@ footer a {
     }
 }
 
+/* Tablet and Desktop only */
+@media (min-width: 481px) {
+    .experience-info {
+        display: grid;
+        grid-template-areas: 
+            "company company"
+            "title duration";
+        grid-template-columns: 1fr auto;
+        align-items: baseline;
+    }
+
+    .experience-info a,
+    .experience-info .company {
+        grid-area: company;
+    }
+
+    .experience-info h3 {
+        grid-area: title;
+        margin-bottom: 0;
+    }
+
+    .experience-info .duration {
+        grid-area: duration;
+    }
+}
+
+
+/* Mobile only */
 @media (max-width: 480px) {
     .container {
         padding: 1.5rem 1rem;
@@ -533,16 +541,6 @@ footer a {
 
     .subtitle {
         font-size: 0.9rem;
-    }
-
-    .profile-photo {
-        width: 200px;
-        height: 200px;
-    }
-
-    .company-logo {
-        width: 50px;
-        height: 50px;
     }
 }
 
