@@ -340,6 +340,14 @@ h2::after {
 }
 
 
+.location {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    opacity: 0.8;
+    margin-bottom: 0.25rem;
+    font-style: italic;
+}
+
 .experience-description {
     margin-top: 1rem;
     color: var(--text-secondary);
@@ -377,13 +385,13 @@ h2::after {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.4rem;
     color: var(--text-primary);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.25rem;
 }
 
 .degree {
     color: var(--accent-light);
-    font-weight: 500;
-    margin-bottom: 0.25rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
 }
 
 /* Skills Section */
@@ -438,6 +446,10 @@ h2::after {
     color: var(--text-primary);
     border-color: rgba(var(--primary-blue-rgb), 0.3);
     transform: translateY(-2px);
+}
+
+.skill-category.full-width {
+    grid-column: 1 / -1;
 }
 
 /* Footer */
@@ -504,26 +516,38 @@ footer a {
 
 /* Tablet and Desktop only */
 @media (min-width: 481px) {
-    .experience-info {
+    .experience-info,
+    .education-info {
         display: grid;
         grid-template-areas: 
-            "company company"
-            "title duration";
+            "header location"
+            "subheader duration";
         grid-template-columns: 1fr auto;
         align-items: baseline;
     }
 
     .experience-info a,
-    .experience-info .company {
-        grid-area: company;
+    .experience-info .company,
+    .education-info a,
+    .education-info h3 {
+        grid-area: header;
     }
 
-    .experience-info h3 {
-        grid-area: title;
+    .experience-info .location,
+    .education-info .location {
+        grid-area: location;
+        text-align: right;
         margin-bottom: 0;
     }
 
-    .experience-info .duration {
+    .experience-info h3,
+    .education-info .degree {
+        grid-area: subheader;
+        margin-bottom: 0;
+    }
+
+    .experience-info .duration,
+    .education-info .duration {
         grid-area: duration;
     }
 }
