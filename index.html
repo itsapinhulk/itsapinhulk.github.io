@@ -14,6 +14,16 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
 
+  <script>
+    // Immediate theme initialization to prevent flickering
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'light') {
+        document.documentElement.classList.add('light-mode');
+      }
+    })();
+  </script>
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RYQE3KZB0M"></script>
   <script>
@@ -28,6 +38,11 @@
 <body>
 <div class="container">
   <header>
+    <div class="theme-toggle-wrapper">
+      <button id="theme-toggle" aria-label="Toggle dark/light mode">
+        <i class="fas fa-moon"></i>
+      </button>
+    </div>
     <div class="header-photo">
       <img src="https://www.gravatar.com/avatar/005638b36f6a30900c959ef6091c33337fbcc63f735aa76c86b27fdade7bf510?s=200" alt="Pulkit Sinha" class="profile-photo">
     </div>
@@ -327,5 +342,29 @@
     </p>
   </footer>
 </div>
+
+<script>
+  const themeToggle = document.getElementById('theme-toggle');
+  const icon = themeToggle.querySelector('i');
+
+  // Set initial icon
+  if (document.documentElement.classList.contains('light-mode')) {
+    icon.classList.replace('fa-moon', 'fa-sun');
+  }
+
+  themeToggle.addEventListener('click', () => {
+    document.documentElement.classList.toggle('light-mode');
+
+    const isLightMode = document.documentElement.classList.contains('light-mode');
+    localStorage.setItem('theme', isLightMode ? 'light' : 'dark');
+
+    // Update icon
+    if (isLightMode) {
+      icon.classList.replace('fa-moon', 'fa-sun');
+    } else {
+      icon.classList.replace('fa-sun', 'fa-moon');
+    }
+  });
+</script>
 </body>
 </html>
