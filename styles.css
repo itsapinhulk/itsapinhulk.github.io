@@ -270,22 +270,34 @@ h2::after {
     letter-spacing: 0.05em;
 }
 
+.gist-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: auto;
+    flex: 1;
+}
+
+.project-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
 .coming-soon {
     text-align: center;
     padding: 1.5rem;
-    background: rgba(var(--primary-blue-rgb), 0.03);
     border: 2px dashed rgba(var(--primary-blue-rgb), 0.2);
     border-radius: 8px;
     color: var(--text-secondary);
     font-style: italic;
     font-size: 1.1rem;
+    background: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
-    align-self: center;
-    justify-self: center;
-    width: 100%;
-    max-width: 250px;
+    flex: 1;
 }
 
 /* Experience Section */
