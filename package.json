@@ -13,5 +13,10 @@
   "devDependencies": {
     "vite": "^6.0.0",
     "vite-plugin-singlefile": "^2.0.0"
+  },
+  "dependencies": {
+    "@fontsource/cormorant-garamond": "^5.2.11",
+    "@fontsource/work-sans": "^5.2.8",
+    "@fortawesome/fontawesome-free": "^7.1.0"
   }
 }

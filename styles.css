@@ -1,3 +1,14 @@
+/* Fonts and Icons */
+@import "@fortawesome/fontawesome-free/css/all.min.css";
+@import "@fontsource/cormorant-garamond/300.css";
+@import "@fontsource/cormorant-garamond/400.css";
+@import "@fontsource/cormorant-garamond/600.css";
+@import "@fontsource/cormorant-garamond/700.css";
+@import "@fontsource/work-sans/300.css";
+@import "@fontsource/work-sans/400.css";
+@import "@fontsource/work-sans/500.css";
+@import "@fontsource/work-sans/600.css";
+
 :root {
     --primary-blue: #4a90e2;
     --primary-blue-rgb: 74, 144, 226;
